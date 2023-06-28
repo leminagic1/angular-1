@@ -1,0 +1,29 @@
+
+<section class="container forms">
+<div class="form login">
+    <div class="form-content">
+ 
+    <header>Login</header>
+  <form [formGroup]="loginForm">
+    <div class="field input-field">
+        <input formControlName="email" type="email" placeholder="Email" class="email">
+
+    </div>
+    <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')" class="text-danger">*Email is required</small>
+    <div class="field input-field">
+        <input formControlName="password" [type]="type" placeholder="Password" class="password" >
+        <i (click)="hideShowPass()" class="bx bx-hide "></i>
+    </div>
+    <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Password is required</small>
+  
+    <div class="field button-field">
+       <button type="submit" (click)="onLogin()">Login</button>
+
+    </div>
+
+    <div class="form-link">
+        <span>Don't have an account? <a id="forget" routerLink="/signup">Signup</a></span>
+    </div>
+  </form>
+</div>
+  </div></section>
